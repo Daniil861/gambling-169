@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Gambl-169"
+})
+
+<body>
+	<div class="wrapper">
+		<div class="wrapper__main main">
+			<div class="main__body">
+				<div class="main__header">
+					<div class="main__items">
+						<button type="button" class="main__item _disabled">
+							<img src="@img/other/card-1.png" alt="Image">
+						</button>
+						<button type="button" data-btn="aviator" class="main__item">
+							<img src="@img/other/card-2.png" alt="Image">
+						</button>
+						<button type="button" class="main__item _disabled">
+							<img src="@img/other/card-3.png" alt="Image">
+						</button>
+					</div>
+				</div>
+
+				<div class="main__info info-main">
+					<div class="info-main__body">
+						<div class="info-main__title">Landing gear, flaps and economy</div>
+						<div class="info-main__image _1 -ibg">
+							<img src="@img/other/info-1.png" alt="Image">
+						</div>
+						<div class="info-main__text">
+							<p>
+								The crew of the ill-fated Il-86 also used a new technique and released the flaps to the landing
+								gear. Unaware of the new trends in piloting, the Il-86 automatics immediately turned on the
+								voice and light alarms, which required the crew to release the landing gear. So that the alarm
+								system did not annoy the pilots, it was simply turned off, as one turns off a sleepy alarm
+								clock. Now there was no one to remind the crew that the landing gear still needed to be
+								released. Today, however, there are already copies of Tu-154 and Il-86 aircraft with modified
+								alarms, which fly according to the approach method with a late release of mechanization.
+							</p>
+						</div>
+						<div class="info-main__image _2 -ibg">
+							<img src="@img/other/info-2.png" alt="Image">
+						</div>
+						<div class="info-main__image _3 -ibg">
+							<img src="@img/other/info-3.png" alt="Image">
+						</div>
+						<div class="info-main__text">
+							<p>
+								Course and glide system <br>
+								The course and glide path system consists of two parts: pairs of directional and glide path
+								beacons. Two directional beacons are located behind the runway and emit a directional radio
+								signal along it at different frequencies at small angles. On the runway centerline, the
+								intensity of both signals is the same. To the left and right of this line, the signal from one
+								of the beacons is stronger than the other. By comparing the intensity of the signals, the
+								aircraft's radio navigation system determines which side and how far it is from the centerline.
+								Two glide path beacons are located in the area of the landing zone and operate in the same way,
+								only in the vertical plane.
+							</p>
+						</div>
+						<div class="info-main__image _4 -ibg">
+							<img src="@img/other/info-4.png" alt="Image">
+						</div>
+						<div class="info-main__text">
+							<p>
+								To begin with, let's make terminological clarity. A hard landing in aviation use is a landing
+								with an overload that is much higher than the standard one. As a result of such a landing, the
+								aircraft in the worst case receives damage in the form of residual deformation, and in the best
+								case — requires special maintenance aimed at additional monitoring of the aircraft's condition.
+								As Igor Kulik, a leading flight instructor at the S7 Airlines Flight Standards Department,
+								explained to us, today a pilot who made a real hard landing is suspended from flying and sent
+								for additional training on simulators. Before getting back on the flight, the offender will also
+								have a test and training flight with an instructor.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="main__footer">
+					<div class="main__items">
+						<button type="button" class="main__item _disabled">
+							<img src="@img/other/card-4.png" alt="Image">
+						</button>
+						<button type="button" class="main__item _disabled">
+							<img src="@img/other/card-5.png" alt="Image">
+						</button>
+						<button type="button" data-btn="privacy" class="main__item _privacy">
+							<img src="@img/other/card-6.png" alt="Image">
+							<span class="_text-gradient">PRIVACY POLICY</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper__game game">
+			<div class="game__body">
+				<div class="main__header">
+					<div class="main__items">
+						<button type="button" data-btn="avia-home" class="main__item">
+							<img src="@img/other/card-1.png" alt="Image">
+							<span class="_text-gradient">BACK</span>
+						</button>
+						<button type="button" class="main__item">
+							<img src="@img/other/card-2.png" alt="Image">
+						</button>
+						<button type="button" class="main__item">
+							<img src="@img/other/card-3.png" alt="Image">
+						</button>
+					</div>
+				</div>
+				<div class="game__content">
+					<div class="game__field field">
+						<div class="field__body">
+							<div class="field__coeff">0x</div>
+							<div class="field__airplane">
+								<div class="field__pin"></div>
+							</div>
+							<div class="field__loader">
+								<img src="@img/icons/arrows.svg" alt="Icon">
+								<p>waiting for a new round</p>
+							</div>
+							<canvas width="500" height="500" class="ctx"></canvas>
+						</div>
+					</div>
+					<div class="game__footer footer-avia">
+						<div class="footer-avia__body">
+							<div class="footer-avia__button-box">
+								<button type="button" data-btn="aviator-start" class="footer-avia__button-bet">
+									<span>Start</span>
+								</button>
+							</div>
+							<div class="footer-avia__block-bet block-bet">
+								<div class="block-bet__controls">
+									<div data-btn="bet-down" class="block-bet__minus">-</div>
+									<div class="block-bet__bet">
+										<div class="block-bet__coins bet-score">50</div>
+										<div class="block-bet__icon"></div>
+									</div>
+									<div data-btn="bet-up" class="block-bet__plus">+</div>
+								</div>
+							</div>
+							<div class="footer-avia__score-box score-box">
+								<div class="score-box__body">
+									<span class="score-box__score score">0</span>
+									<div class="score-box__icon icon-coin"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="game__final final">
+		<div class="final__body">
+			<div class="final__title">you win!</div>
+			<div class="final__score-box score-box">
+				<div class="score-box__body">
+					<div class="score-box__icon icon-coin"><span></span> </div>
+					<div class="score-box__score final-check">0</div>
+				</div>
+			</div>
+			<div class="final__button-box">
+				<button class="final__button button"><span>ok</span></button>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

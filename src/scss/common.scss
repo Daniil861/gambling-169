@@ -1,0 +1,250 @@
+.button {
+	position: relative;
+	z-index: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 319px;
+	height: 70px;
+
+	background: linear-gradient(180deg, #ffc700 0%, #fb7800 100%);
+	border-radius: 35px;
+
+	transition: all 0.3s ease 0s;
+
+	span {
+		font-style: italic;
+		font-weight: 800;
+		font-size: 19px;
+		line-height: math.div(23, 19);
+
+		color: #ffffff;
+	}
+
+	@media (max-height: 650px) {
+		width: 230px;
+		height: 45px;
+		span {
+			font-size: 22px;
+		}
+	}
+
+	&:active {
+		transform: scale(0.97);
+	}
+	&._hold {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+//========================================================================================================================================================
+.preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	display: flex;
+	width: 100%;
+	min-height: 100vh;
+
+	overflow: hidden;
+
+	&__block-acces {
+	}
+
+	&__acces {
+	}
+
+	&__button-box {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+		height: 121px;
+		z-index: 5;
+
+		background-color: rgba(38, 38, 38, 0.7);
+	}
+
+	// .preloader__button
+
+	&__button {
+	}
+}
+.acces-preloader {
+	position: relative;
+	z-index: 3;
+
+	display: flex;
+	flex-direction: column;
+	max-height: 100vh;
+
+	overflow: auto;
+
+	&._hide {
+		display: none;
+	}
+
+	&__title-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		min-height: 94px;
+
+		background-color: #262626;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: math.div(29, 24);
+
+		color: #ffffff;
+	}
+
+	&__text-box {
+		background-color: #d7d7d7;
+		padding-block: 30px 150px;
+		padding-inline: 20px;
+	}
+
+	// .acces-preloader__text
+
+	&__text {
+		padding-bottom: 12px;
+	}
+}
+
+.text-pre {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: math.div(17, 14);
+	text-align: center;
+
+	color: #343434;
+
+	@media (min-width: 700px) and (min-height: 700px) {
+		font-size: 18px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+	}
+}
+
+.block-bet {
+	display: flex;
+
+	&._hold {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	// .block-bet__controls
+
+	&__controls {
+		position: relative;
+		display: grid;
+		grid-template-columns: 66px 1fr 66px;
+		column-gap: 5px;
+		width: 100%;
+
+		&._hold {
+			transition: all 0.6s ease 0s;
+			pointer-events: none;
+			opacity: 0.3;
+		}
+	}
+
+	&__minus,
+	&__plus {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 66px;
+		height: 70px;
+
+		background-color: #7d7d7d;
+		border-radius: 50%;
+
+		@include adaptiveValue("font-size", 26, 16, 1200, 550, 1);
+		color: #fff;
+		transition: all 0.3s ease 0s;
+
+		&:active {
+			transform: scale(0.9);
+		}
+	}
+
+	// .block-bet__bet
+
+	&__bet {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 6px;
+
+		height: 70px;
+
+		background-color: #7d7d7d;
+		border-radius: 35px;
+	}
+
+	// .block-bet__coins
+
+	&__coins {
+		min-width: 40px;
+
+		font-style: italic;
+		font-weight: 800;
+		font-size: 19px;
+		line-height: math.div(23, 19);
+
+		color: #ffffff;
+
+		text-align: center;
+
+		&._no-money {
+			animation: no-money 0.5s ease 2;
+		}
+	}
+
+	&__icon {
+		width: 37px;
+		height: 26px;
+
+		background-image: url("@img/aviator/icon-plane.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
+
+.score {
+	&._no-money {
+		animation: no-money 0.7s ease 2;
+	}
+	&._delete-money {
+		animation: delete-money 0.7s ease;
+	}
+	&._anim-add-money {
+		animation: add-money 0.5s ease 3;
+	}
+}
+
+[type="button"] {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+//========================================================================================================================================================

@@ -1,0 +1,240 @@
+.game {
+	position: absolute;
+	z-index: 10;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: #9f9f9f;
+
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(10px);
+
+	transition: all 0.5s ease 0s;
+
+	._aviator & {
+		pointer-events: fill;
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+	// .game__body
+
+	&__body {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	// .game__header
+
+	&__header {
+	}
+
+	// .game__content
+
+	&__content {
+		flex: 1 1 auto;
+
+		display: grid;
+
+		row-gap: 22px;
+		grid-template-rows: 1fr 300px;
+
+		padding-inline: 20px;
+		padding-top: 14px;
+	}
+
+	// .game__field
+
+	&__field {
+	}
+
+	// .game__footer
+
+	&__footer {
+	}
+}
+
+.field {
+	// .field__body
+
+	&__body {
+		position: relative;
+		min-height: 100%;
+
+		background: rgba(255, 255, 255, 0.5);
+
+		overflow: hidden;
+
+		&._fly {
+			.field__airplane {
+				animation: fly_air 1s ease infinite 0.5s;
+			}
+		}
+
+		&._loader {
+			.field__airplane {
+				animation: start_air 5s ease;
+			}
+			.field__coeff {
+				opacity: 0;
+			}
+			.field__loader {
+				opacity: 1;
+				visibility: visible;
+				img {
+					animation: rotate_helix 1s linear infinite 0.5s;
+				}
+			}
+		}
+	}
+
+	// .field__coeff
+
+	&__coeff {
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		font-style: italic;
+		font-weight: 800;
+		font-size: 32px;
+		line-height: math.div(39, 32);
+
+		color: #323232;
+	}
+
+	// .field__airplane
+
+	&__airplane {
+		position: absolute;
+		bottom: 2%;
+		left: 2%;
+		transform: rotate(0deg);
+		z-index: 2;
+		width: 70px;
+		height: 43px;
+
+		background-image: url("@img/aviator/plane.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&__pin {
+		position: absolute;
+		bottom: 5px;
+		left: 10px;
+		width: 1px;
+		height: 1px;
+	}
+
+	// .field__loader
+
+	&__loader {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		row-gap: 20px;
+
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.7s ease 0s;
+
+		p {
+			font-style: italic;
+			font-weight: 800;
+			font-size: 19px;
+			line-height: math.div(23, 19);
+			color: #323232;
+		}
+	}
+}
+
+.ctx {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.footer-avia {
+	// .footer__body
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+
+	&__button-box {
+		display: flex;
+		justify-content: center;
+
+		margin-bottom: 29px;
+	}
+
+	// .footer__block-bet
+
+	&__block-bet {
+		margin-bottom: 14px;
+	}
+
+	// .footer__button-bet
+
+	&__button-bet {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+		height: 70px;
+
+		background: #0e0e0e;
+		border-radius: 35px;
+
+		margin-inline: auto;
+
+		transition: all 0.3s ease 0s;
+		@media (min-width: 700px) and (min-height: 700px) {
+			width: 319px;
+		}
+
+		span {
+			font-style: italic;
+			font-weight: 800;
+			font-size: 19px;
+			line-height: math.div(23, 19);
+
+			color: #ffffff;
+			text-transform: uppercase;
+		}
+		&:active {
+			transform: translateY(2px);
+		}
+		&._loose {
+			background: rgb(169, 9, 9);
+		}
+		&._cash {
+			background: green;
+		}
+		&._hold {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+}
